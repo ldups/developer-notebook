@@ -43,3 +43,24 @@ Example:
 mlpack-3.2.2/build/bin/mlpack_sg_lasso_leastr -v -f retsat-fixed-input/feature_retsat-fixed-input.txt -n retsat-fixed-input/group_indices_retsat-fixed-input.txt -r retsat-fixed-input/response_retsat-fixed-input.txt
  -w retsat_fixed_out.xml
  ```
+ 
+ ### Processing results
+These commands process the xml file (produced in the last step) by using the feature mapping file (produced by preprocessing). The final product will be a table with the position or gene and a score.
+ 
+ Outline:
+ 
+ ```
+grep -P "<item>.*</item>" output-file.xml | sed -re "s/.*<item>(.*)<\/item>.*/\1/" > temporary-file.txt
+paste <(sed -e "1d" feature-mapping-input.txt) temporary-file.txt | grep -v "0.00000000000000000e+00" > processed-output.txt
+```
+
+Example of output:
+
+```
+1       RETSAT.origin.seq.unpacked_186_I        -7.70832979778843241e-03
+2       RETSAT.origin.seq.unpacked_186_L        4.04189659532450726e-03
+3       RETSAT.origin.seq.unpacked_186_V        6.88962798969870401e-04
+4       RETSAT.origin.seq.unpacked_187_S        6.88962798969870401e-04
+5       RETSAT.origin.seq.unpacked_187_T        -7.70832979778843241e-03
+6       RETSAT.origin.seq.unpacked_187_V        1.13480579121774863e-02
+```
