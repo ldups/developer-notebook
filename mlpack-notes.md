@@ -31,6 +31,7 @@ ATCGATTCATGC
 ```
 
 ### **Scripts**
+#### *All commands run in Unix. On Windows, these commands work in WSL 2.*
 ### Preprocess
 Outline (runs from directory with matrix and path files):
 
