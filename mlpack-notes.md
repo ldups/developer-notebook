@@ -101,3 +101,5 @@ Example of output:
 ```
 
 The most positive values are most associated with the ingroup species (given a 1 in the response matrix). The most negative values are most associated with the outgroup species (given a -1 in the response matrix).
+
+is: ignore singletons
