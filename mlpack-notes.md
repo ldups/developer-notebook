@@ -47,7 +47,10 @@ path_file_2.fasta
 Solution: remove empty line
 
 ### **Scripts**
+#### *All commands run in Unix. On Windows, these commands work in WSL 2.*
 ### Preprocess
+Option 'is' can be used to ignore singletons (all bases at certain position are the same except for 1)
+
 Outline (runs from directory with matrix and path files):
 
 ```
