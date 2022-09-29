@@ -33,6 +33,8 @@ ATCGATTCATGC
 ### **Scripts**
 #### *All commands run in Unix. On Windows, these commands work in WSL 2.*
 ### Preprocess
+Option 'is' can be used to ignore singletons (all bases at certain position are the same except for 1)
+
 Outline (runs from directory with matrix and path files):
 
 ```
@@ -101,5 +103,3 @@ Example of output:
 ```
 
 The most positive values are most associated with the ingroup species (given a 1 in the response matrix). The most negative values are most associated with the outgroup species (given a -1 in the response matrix).
-
-is: ignore singletons
